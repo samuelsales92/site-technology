@@ -1,0 +1,363 @@
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    background-color: black;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0px 30px;
+    box-shadow: 0 5px 15px rgba(66, 65, 65, 0.06);
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    left: 0;
+    opacity: 85%;
+    background-color: rgba(101, 124, 148, 0.123); 
+}
+
+.logo{
+    width: 80px;
+    background: none;
+    border-radius: 45%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.logo:hover{
+    transform: rotateY(180deg);
+}
+
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: none;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0eaea;
+    transition: 0.3s;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178; 
+}
+
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    position: relative;
+    background-color: #088178;
+    height: 2px;
+    width: 30%;
+    left: 20px;
+    bottom: -4px;
+    
+
+}
+
+.imagem {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+    bottom: 90px;
+    background-size: cover;
+    
+    
+}
+
+.titulo {
+
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: absolute;
+    font-size: 20px;
+    left: 120px;
+   
+}
+  
+@keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
+
+#texto {
+    
+    line-height: 0.1;
+    font-weight: 700;
+    text-align: center;
+    font-family: Hack, sans-serif;
+    color:rgba(12, 12, 12, 0.616);
+    transition: 2s;
+    position: absolute;
+    font-size: 32px;
+    left: 50px;
+    top: 200px;
+    position: absolute;
+    -webkit-animation: linear initial;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 2s;
+  }
+
+  @-webkit-keyframes run {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 20%;
+    }
+    100% {
+      left: none;    
+    }
+  }
+
+#texto:hover {
+
+    transition: 1s;
+    font-weight: 700;
+    text-align: center;
+    font-family: Hack, sans-serif;
+    color:rgba(255, 255, 255, 0.384);
+    transition: 2s;
+    position: absolute;
+    font-size: 32px;
+    left: 80px;
+    top: 200px;
+
+}
+
+
+.wrapper {
+  position: absolute;
+  left: 125px;
+  top: 320px;
+  -webkit-animation: linear initial;
+  -webkit-animation-name: run2;
+  -webkit-animation-duration: 2.2s;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+  margin: 0;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 2s;
+  
+}
+
+.wrapper:hover{
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0 0 0 0;
+  left: 140px;
+  color: black;
+
+}
+
+@-webkit-keyframes run2 {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 25%;
+    }
+    100% {
+      left: none;    
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
+
+  :root {
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(168, 239, 255, 1);
+    --c2: rgba(168, 239, 255, 0.1);
+  }
+  
+  a{
+    margin: 2px 10px 2px ;
+    text-decoration: none;
+    color: white;
+    font-family: Raleway, sans-serif;
+  }
+
+  a:hover{
+    color: black;
+    transition: 1s;
+  }
+
+  .box {
+    font-size: 15px;
+    margin: none;
+    padding: 5px;
+    border: 2px solid;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+    background-color: transparent;
+  
+
+  }
+  
+  .box:nth-child(2) {
+    border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+    animation: borderRadial var(--d) linear infinite forwards;
+  }
+  
+  @keyframes borderRotate {
+    100% {
+      --angle: 420deg;
+    }
+  }
+  
+  @keyframes borderRadial {
+    20% {
+      --gradX: 100%;
+      --gradY: 50%;
+    }
+    40% {
+      --gradX: 100%;
+      --gradY: 100%;
+    }
+    60% {
+      --gradX: 50%;
+      --gradY: 100%;
+    }
+    80% {
+      --gradX: 0%;
+      --gradY: 50%;
+    }
+    100% {
+      --gradX: 50%;
+      --gradY: 0%;
+    }
+  }
+
+
+  .bgimg {
+    height: 100%;
+    background-image: linear-gradient(rgb(8, 8, 8), rgb(38, 0, 255));
+    background-size: 200px 120px;
+    position: relative;
+    color: rgb(100, 97, 97);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+  }
+
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+
+
+.slideshow-container {
+    width:100%;
+    height:100%;
+    top: 100px;
+    flex-direction:column;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    display: flex;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+
+}
+
+figcaption {
+  font-size: 40px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+
+.shopping {
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  margin: 250px 0 0 50px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.img1 {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  cursor: pointer;
+  transition-delay: 0.1s;
+  transition: 0.5s;
+  left: 75px;
+  
+  
+}
+
+
+.img1:hover{
+  width: 75%;
+  height: 75%;
+  
+  
+}
